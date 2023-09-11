@@ -10,8 +10,9 @@ if __name__ == "__main__":
         st.session_state["OPENAI_API_KEY"] = api_key_input
 
     openai_api_key = st.session_state.get("OPENAI_API_KEY")
-    st.write(openai_api_key)
+    print("hello")
     if openai_api_key:
+        openai.api_key = openai_api_key
         response = openai.ChatCompletion.create(
             model = "gpt-3.5-turbo",
             messages = [{"role": "user", "content": "Hello"}]
