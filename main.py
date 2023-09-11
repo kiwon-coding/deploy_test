@@ -10,7 +10,6 @@ if __name__ == "__main__":
         st.session_state["OPENAI_API_KEY"] = api_key_input
 
     openai_api_key = st.session_state.get("OPENAI_API_KEY")
-    print("hello")
     if openai_api_key:
         openai.api_key = openai_api_key
         response = openai.ChatCompletion.create(
